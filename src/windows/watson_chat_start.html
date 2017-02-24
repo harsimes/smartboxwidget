@@ -1,0 +1,18 @@
+ <div id="searchbox1" class="container">
+    <!--img id='watsonpic' src='img/Watson_logo_100px.gif' style="max-height:155%;border-radius: 50%;margin-top:-10px;margin-left:-8px" /-->
+	<!--webview id="foo" src="http://kunalconv.mybluemix.net" style="display:inline-flex; width:350px; height:400px" nodeintegration></webview-->
+	<div ng-repeat="message in messages">
+            <span>{{ message.user }}:</span>
+				<p class="text-success" ng-bind-html="message.data"></p>
+        </div>
+		
+        <form ng-submit="send()">
+			</br>
+			<img id='watsonpic' src='img/Watson_logo_100px.gif' style="border-radius: 50%;margin-top:-10px;margin-left:-8px; width:50px" />
+            <!--input class="mdl-textfield__input" ng-model="textbox"-->
+			<div class="form-group">
+			<input class="form-control" ng-model="textbox"></input>
+			</div>
+        </form>
+		
+</div>
