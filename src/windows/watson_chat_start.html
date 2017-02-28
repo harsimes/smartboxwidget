@@ -1,9 +1,12 @@
- <div id="searchbox1" class="container">
+ <div id="searchbox1" class="container-fluid">
     <!--img id='watsonpic' src='img/Watson_logo_100px.gif' style="max-height:155%;border-radius: 50%;margin-top:-10px;margin-left:-8px" /-->
 	<!--webview id="foo" src="http://kunalconv.mybluemix.net" style="display:inline-flex; width:350px; height:400px" nodeintegration></webview-->
-	<div ng-repeat="message in messages">
+	<div style="width: 50%; float: right; text-align: right;">
+			<span style="font-size: 15px; margin-right: 5%;" ng-click="stopChat()">Stop Chat</span>
+	</div>
+	<div class="container-fluid" ng-repeat="message in messages" >
             <span>{{ message.user }}:</span>
-				<p class="text-success" ng-bind-html="message.data"></p>
+				<p class="text-uppercase" ng-bind-html="message.data"></p>
         </div>
 		
         <form ng-submit="send()">

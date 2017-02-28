@@ -31,11 +31,18 @@ function createInsertWindow() {
 
 app.on('ready', function() {
     mainWindow = new BrowserWindow({
-        width: 280,
-        height: 60,
+        width: 640,
+        height: 480,
 		transparent: true,
-		frame: false,
-		resizable: false
+		frame: true,
+		resizable: true,
+		alwaysOnTop: false,
+		 title: 'SmartBox',
+		 webPreferences: {
+			javascript: true,
+			 java: false,
+			directWrite: true
+		 }
     });
 
     //mainWindow.loadURL('file://' + __dirname + '/windows/main/main.html');
@@ -54,5 +61,5 @@ app.on('ready', function() {
 ipcMain.on('resize', function (e, x, y) {
 console.log("resize invokded");
   mainWindow.setSize(x, y)
-})
-
+  //mainWindow.setPosition(1000, 375)
+});
